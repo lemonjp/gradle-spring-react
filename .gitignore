@@ -1,0 +1,11 @@
+*.iml
+*.swp
+.idea
+node_modules
+node
+*.log
+asciidoctor.css
+README.html
+build
+src/main/resources/static/dist
+.gradle/
