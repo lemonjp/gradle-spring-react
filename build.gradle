@@ -53,16 +53,11 @@ dependencies {
   testCompile('org.springframework.boot:spring-boot-starter-test')
 }
 
-
 eclipse {
   classpath {
       containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
       containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
   }
-}
-
-task wrapper(type: Wrapper) {
-  gradleVersion = '2.14'
 }
 
 task webpack(type: NodeTask, dependsOn: 'npmInstall') {
@@ -77,4 +72,4 @@ task webpack(type: NodeTask, dependsOn: 'npmInstall') {
 processResources.dependsOn 'webpack'
 
 clean.delete << file('node_modules')
-clean.delete << file('src/main/webapp/dist')
+clean.delete << file('src/main/resources/static/dist')
