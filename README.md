@@ -9,12 +9,12 @@ Gradle + Webpack + Spring Boot + React Boilerplate
 
 This boilerplate based on [React.js and Spring Data REST](https://spring.io/guides/tutorials/react-and-spring-data-rest/)
 
-But only differences is using Mongodb and Gradle.
+But only differences is using _Mongodb_ and _Gradle_.
 
 ## Requirement
 
-JAVA8
-MongoDB
++ JAVA8
++ MongoDB
 
 ## Install
 
