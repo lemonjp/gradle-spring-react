@@ -1,15 +1,13 @@
 package info.youtown;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import org.springframework.data.annotation.Id;
 
 import lombok.Data;
 
 @Data
-@Entity
 public class Employee {
-    private @Id @GeneratedValue Long id;
+    @Id
+    private String id;
     private String firstName;
     private String lastName;
     private String description;
