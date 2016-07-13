@@ -1,11 +1,9 @@
-'use strict';
-
-var rest = require('rest');
-var defaultRequest = require('rest/interceptor/defaultRequest');
-var mime = require('rest/interceptor/mime');
-var uriTemplateInterceptor = require('./api/uriTemplateInterceptor');
-var errorCode = require('rest/interceptor/errorCode');
-var baseRegistry = require('rest/mime/registry');
+import rest from "rest";
+import defaultRequest from "rest/interceptor/defaultRequest";
+import mime from "rest/interceptor/mime";
+import uriTemplateInterceptor from "./api/uriTemplateInterceptor";
+import errorCode from "rest/interceptor/errorCode";
+import baseRegistry from "rest/mime/registry";
 
 var registry = baseRegistry.child();
 

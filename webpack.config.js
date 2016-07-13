@@ -18,7 +18,7 @@ module.exports = {
     module: {
         loaders: [
             {
-                test: path.join(__dirname, '/\.js[x]?$/'),
+                test: path.join(__dirname, '.'),
                 exclude: /node_modules/,
                 loader: 'babel',
                 query: {

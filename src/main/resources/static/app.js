@@ -1,7 +1,6 @@
-'use strict';
-
-const React = require('react');
-const client = require('./client');
+import React from "react";
+import ReactDOM from "react-dom";
+import client from "./client";
 
 class App extends React.Component {
 
@@ -11,7 +10,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    client({method: 'GET', path: '/api/employees'}).done(response => {
+    client({method: 'GET', path: '/api/employees'}).then(response => {
       this.setState({employees: response.entity._embedded.employees});
     });
   }
@@ -30,12 +29,16 @@ class EmployeeList extends React.Component{
     );
     return (
       <table>
-        <tr>
-          <th>First Name</th>
-          <th>Last Name</th>
-          <th>Description</th>
-        </tr>
-        {employees}
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          {employees}
+        </tbody>
       </table>
     )
   }
@@ -53,7 +56,7 @@ class Employee extends React.Component{
   }
 }
 
-React.render(
+ReactDOM.render(
   <App />,
   document.getElementById('react')
 )
