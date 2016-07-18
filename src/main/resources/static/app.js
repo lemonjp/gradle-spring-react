@@ -1,12 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import injectTapEventPlugin from 'react-tap-event-plugin';
 import client from "./client";
+import EmployeeList from './components/EmployeeList'
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {employees: []};
+    injectTapEventPlugin();
   }
 
   componentDidMount() {
@@ -17,41 +21,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <EmployeeList employees={this.state.employees}/>
-    )
-  }
-}
-
-class EmployeeList extends React.Component{
-  render() {
-    var employees = this.props.employees.map(employee =>
-      <Employee key={employee._links.self.href} employee={employee}/>
-    );
-    return (
-      <table>
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Description</th>
-          </tr>
-        </thead>
-        <tbody>
-          {employees}
-        </tbody>
-      </table>
-    )
-  }
-}
-
-class Employee extends React.Component{
-  render() {
-    return (
-      <tr>
-        <td>{this.props.employee.firstName}</td>
-        <td>{this.props.employee.lastName}</td>
-        <td>{this.props.employee.description}</td>
-      </tr>
+      <MuiThemeProvider>
+        <EmployeeList employees={this.state.employees}/>
+      </MuiThemeProvider>
     )
   }
 }

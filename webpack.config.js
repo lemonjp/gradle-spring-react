@@ -1,6 +1,6 @@
 var path = require('path');
 var ROOT = path.resolve(__dirname, 'src/main/resources/static');
-var DEST = path.resolve(__dirname, 'src/main/resources/static/dist');
+var DEST = path.resolve(ROOT, 'dist');
 
 module.exports = {
     devtool: 'sourcemaps',
